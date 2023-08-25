@@ -21,7 +21,7 @@ def create_app(test_config=None):
     #from . import db
     #db.init_app(app)
 
-    from chycho.controllers import index
-    app.register_blueprint(index.bp)
+    from chycho.controllers import blog
+    app.register_blueprint(blog.bp)
 
     return app
