@@ -1,3 +1,36 @@
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<!doctype html>
 
-<p>Chycho!</p>
+
+<html>
+    <head>
+        <title>chycho</title>
+        <link rel="icon" href="{{ url_for('static', filename='free_chycho.jpeg') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+
+    <body>
+        <h1>chycho.com</h1>
+        <p>Analysis and discussion about the world we live in</p>
+        <ul>
+            <li><a href="default.asp">Home</a></li>
+            <li><a href="news.asp">News</a></li>
+            <li><a href="contact.asp">Contact</a></li>
+            <li><a href="about.asp">About</a></li>
+            
+            <br>
+
+            {% for post in posts %}
+            <article class ="posts">
+                <header>
+                    <div>
+                        <h1>{{ post['title']}}</h1>
+                        <div class="about">by {{ post['author'] }} on {{ post['date'].strftime('%Y-%m-%d') }}</div>
+                    </div>
+                </header>
+                <html class="body">{{ post['body'] }}</html>
+            </article>
+            {% endfor %}
+        </ul> 
+    </body>
+
+</html>

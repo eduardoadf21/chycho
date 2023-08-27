@@ -1,1 +1,29 @@
- body {background-color: yellow;} 
+html { 
+    font-family: sans-serif; 
+    background: black; 
+    padding: 1rem; 
+}
+
+li {
+    display: inline;
+    float: inline-start;
+}
+
+a {
+  display: block;
+  padding: 8px;
+  background-color: #dddddd;
+}
+
+ul {
+  background-color: #f3f3f3;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline;
+  overflow: hidden;
+}
+
+body {
+    background-color: white;
+} 
