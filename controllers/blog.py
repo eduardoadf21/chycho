@@ -20,4 +20,4 @@ def index():
     for post in post_details:
         posts.append(post)
 
-    return render_template('index.html', posts=posts[:100:-1])
+    return render_template('index.html', posts=posts[0:4])
