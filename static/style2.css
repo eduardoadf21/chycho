@@ -1,3 +1,6 @@
+a, a:visited, a:hover, a:active {
+  color: blue;
+}
 
 .wrapper {
     background-color: antiquewhite;
@@ -27,7 +30,6 @@ html {
     padding: 20px;
 }
 
-
 .topnav {
     overflow: hidden;
     background-color: lightgrey;
@@ -47,6 +49,11 @@ html {
     text-decoration: none;
 }
 
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
 .topnav input[type=text] {
   float: right;
   padding: 6px;
@@ -56,46 +63,42 @@ html {
   font-size: 17px;
 }
 
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
+.content {
+  float: left;
+  width: 70%;
+  position: relative;
+  top: -20px;
 }
 
-.content{
-    width: 90%;
+
+.popular {
+    position: relative;
+    font-size: 15px;
+    left: -40;
+    font-weight: bold;
 }
 
-.post{
-    width: 75%;
+.popular li {
+    overflow: hidden;
+    padding-left: 0%;
 }
 
-.query{
-    width: 75%;
+
+.sidebar {
+  float: right;
+  padding-right: 20px;
+  width: 20%;
 }
 
-.featured{
-    width: 95%;
+section::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.sidebar{ 
-    width: 30%;
-    float: right;
-}
-
-.featured:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.content:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.sidebar:after {
-    content: "";
-    display: table;
-    clear: both;
+.footer {
+  background-color: yellow;
+  padding: 10px;
+  text-align: center;
+  color: black;
 }

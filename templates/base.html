@@ -3,10 +3,10 @@
 <html lang="en-US">
 
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <title>chycho</title>
     <link rel="icon" href="{{ url_for('static', filename='free_chycho.jpeg') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
@@ -19,32 +19,32 @@
         <ul class="topnav">
             <li><a href="{{url_for('blog.index')}}">Home</a></li>
             <li><a href="{{url_for('blog.getPost',title='About Page')}}">About</a></li>
-            <div class="search-container">
-                <form method="post">
-                    <input type="text" placeholder="Search.." name="search", value="{{request.form['search_query']}}">
-                </form>
-            </div>
+            <li><a href="">Math</a></li>
+            <li><a href="">Food</a></li>
+            <li><a href="">Comics</a></li>
         </ul>
 
         <div class="sidebar">
-            <img src= "{{ url_for('static', filename='free_chycho.jpeg') }}">
+            <div class="search-container">
+                <form method="post">
+                    <input type="text" placeholder="Search.." name="search_query" ,
+                        value="{{request.form['search_query']}}">
+                </form>
+            </div>
+            <img src="{{ url_for('static', filename='free_chycho.jpeg') }}">
+            <div class="popular">{% include 'popular.html' %}</div>
         </div>
-        
-        <div class="post">{% block post %}{% endblock %}</div>
 
-        <div class="featured">{% block featured %}{% endblock %}</div>
-
-        <div class="content">{% block content %}{% endblock %}<div>
+        <section>
+            {% block content %}{% endblock %}
+        </section>
 
 
-
-    </div>
-
+        <div class=footer>
+            <p>Author: Luis Eduardo</p>
+            <p><a href="mailto:hege@example.com">eduardoadf.luis@gmail.com</a></p>
+        </div>
 
 </body>
-    <div class=footer>
-        <p>Author: Luis Eduardo</p>
-        <p><a href="mailto:hege@example.com">eduardoadf.luis@gmail.com</a></p>
-    </div> 
 
 </html>

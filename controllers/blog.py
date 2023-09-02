@@ -1,5 +1,6 @@
 from flask import Flask
 from chycho.db import get_database
+from chycho.vault import postRepository
 
 
 from flask import (
@@ -8,33 +9,29 @@ from flask import (
 
 bp = Blueprint('blog', __name__, url_prefix='/')
 
+Posts = postRepository()
 
-@bp.route("/", methods=('POST','GET'))
+@bp.route("/", methods=['POST','GET'])
 def index():
-
-    chychoVault = get_database()
-    posts = chychoVault["posts2"]
 
     if request.method == 'POST':
         search_query = request.form['search_query']
-        query = {"title": { "$regex": search_query }}
-        search_results = posts.find(query)
-        for post in search_results:
-            print(post)
+        queried_posts = Posts.searchPosts(search_query)
+        return render_template('search_results.html', posts=queried_posts)
             
-    post_details = posts.find()
+    posts = Posts.getPosts()
 
-    posts = []
-    for post in post_details:
-        posts.append(post)
+    return render_template('index.html', posts=posts[0:4])
 
-    return render_template('index2.html', posts=posts[0:4])
 
-@bp.route("/<title>", methods=['GET'])
+@bp.route("/<title>", methods=['POST','GET'])
 def getPost(title):
 
-    chychoVault = get_database()
-    posts = chychoVault["posts2"]
-    post = posts.find_one({"title": title})
+    if request.method == 'POST':
+        search_query = request.form['search_query']
+        queried_posts = Posts.searchPosts(search_query)
+        return render_template('search_results.html', posts=queried_posts)
+
+    post = Posts.getPostByTitle(title)
 
     return render_template('post.html', post=post)

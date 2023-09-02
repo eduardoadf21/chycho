@@ -1,60 +1,29 @@
-<!doctype html>
+{% extends "base.html" %}
 
-<html>
+{% block content %}
+<div class="content">
+    <h2>Featured</h2>
+    <h2>{{ posts[0]['title']}}</h2>
+    <iframe id="odysee-iframe" width="560" height="315"
+        src="https://odysee.com/$/embed/@chycho:6/BlackberryJam_Aug2023_chycho:d?r=5xfZA3F42Qx5DVRtAHkR8QDRYrDjm2Qi"
+        allowfullscreen></iframe>
+    <br>
+    <h3>Latest</h3>
+    {% for post in posts[1:] %}
+    <article>
+        <header>
+            <div>
+                <h3><a href="{{url_for('blog.getPost',title=post['title'])}}"> {{ post['title']}} </a></h3>
+                <div class="about">by {{ post['author'] }} on {{ post['date'].strftime('%Y-%m-%d') }}</div>
+                <br>
+            </div>
+        </header>
+        <html class="post">
+        {{ post['body'] | safe }}
 
-<head>
-    <title>chycho</title>
-    <link rel="icon" href="{{ url_for('static', filename='free_chycho.jpeg') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-</head>
-
-<body class="wrapper">
-    <div>
-
-        <h1 class="header">chycho.com</h1>
-        <p>Analysis and discussion about the world we live in</p>
-
-        <ul class="topnav">
-            <li><a href="{{url_for('blog.index')}}">Home</a></li>
-            <li><a href="news.asp">News</a></li>
-            <li><a href="contact.asp">Contact</a></li>
-            <li><a href="about.asp">About</a></li>
-        </ul>
-
-        <div class="sidebar">
-            <br><br><br>
-            <img src= "{{ url_for('static', filename='free_chycho.jpeg') }}">
-        </div>
-
-        <div class="featured">
-            <h2>Featured</h2>
-            <h2>{{ posts[0]['title']}}</h2>
-            <iframe id="odysee-iframe" width="560" height="315" src="https://odysee.com/$/embed/@chycho:6/BlackberryJam_Aug2023_chycho:d?r=5xfZA3F42Qx5DVRtAHkR8QDRYrDjm2Qi" allowfullscreen></iframe> 
-            <br>
-        </div>
-
-        <div class="content">
-            <h3>Latest</h3>
-            {% for post in posts[1:] %}
-            <article>
-                <header>
-                    <div>
-                        <h3>{{ post['title']}}</h1>
-                        <div class="about">by {{ post['author'] }} on {{ post['date'].strftime('%Y-%m-%d') }}</div>
-                    </div>
-                </header>
-                <html class="post">
-                    {{ post['body'] | safe }}
-                </html>
-                <hr>
-            </article>
-            {% endfor %}
-        <div>
-
-
-    </div>
-
-</body>
-
-</html>
+        </html>
+        <hr>
+    </article>
+    {% endfor %}
+<div>
+{% endblock %}

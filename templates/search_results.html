@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="content">
+    <h2>{{ posts|length }} results</h2>
+    {% for post in posts %}
+    <article>
+        <header>
+            <div>
+                <h3>
+                    <a href="{{url_for('blog.getPost',title=post['title'])}}"> {{ post['title']}} </a>
+                </h3>
+                <div class="about">by {{ post['author'] }} on {{ post['date'].strftime('%Y-%m-%d') }}</div>
+                <br>
+            </div>
+        </header>
+        <hr>
+    </article>
+    {% endfor %}
+    <div>
+{% endblock %}
