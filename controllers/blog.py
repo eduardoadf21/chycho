@@ -1,10 +1,9 @@
 from flask import Flask
-from chycho.db import get_database
 from chycho.vault import postRepository
 
 
 from flask import (
-    Blueprint, render_template, request, redirect, url_for
+    Blueprint, render_template, request
 )
 
 bp = Blueprint('blog', __name__, url_prefix='/')
