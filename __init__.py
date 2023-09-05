@@ -1,8 +1,12 @@
 import os
 from flask import Flask
+from flask_ckeditor import CKEditor
+
+ckeditor = CKEditor()
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
+    ckeditor.init_app(app)
     app.config.from_mapping(
         SECRET_KEY='dev'
         #DATABASE=os.path.join(app.instance_path, 'api.sqlite'),

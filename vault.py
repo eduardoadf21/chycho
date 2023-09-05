@@ -32,3 +32,9 @@ class postRepository:
             print(post['title'])
 
         return queried_posts
+    
+    def updatePost(self, title, editedPost):
+        chychoVault = get_database()
+        posts = chychoVault["posts2"]
+
+        posts.update_one({'title': title},{"$set": {'body': editedPost}})

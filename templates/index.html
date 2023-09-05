@@ -1,9 +1,14 @@
 {% extends "base.html" %}
 
+{% block sidebar %}
+    {% include 'sidebar.html' %}
+{% endblock %}
+
 {% block content %}
 <div class="content">
+    <p><a href="{{url_for('blog.newPost')}}">New Post</a></p>
     <h2>Featured</h2>
-    <h2>{{ posts[0]['title']}}</h2>
+    <h2><a href="{{url_for('blog.getPost',title=posts[0]['title'])}}"> {{ posts[0]['title']}} </a></h2>
     <iframe id="odysee-iframe" width="560" height="315"
         src="https://odysee.com/$/embed/@chycho:6/BlackberryJam_Aug2023_chycho:d?r=5xfZA3F42Qx5DVRtAHkR8QDRYrDjm2Qi"
         allowfullscreen></iframe>

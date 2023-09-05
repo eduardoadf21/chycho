@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+{{ ckeditor.load() }}
+{{ ckeditor.load(pkg_type="basic") }}
+
+<form method="post">
+    {{ ckeditor.create(value=article_body) }}
+    <input type="submit">
+</form>
+
+{% endblock %}

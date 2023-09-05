@@ -1,9 +1,10 @@
 a, a:visited, a:hover, a:active {
-  color: blue;
+  color: #0051ff;
+  text-decoration: none;
 }
 
 .wrapper {
-    background-color: antiquewhite;
+    background-color: whitesmoke;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: auto;
@@ -12,7 +13,6 @@ a, a:visited, a:hover, a:active {
     padding-top: 5px;
     padding-right: 10px;
     padding-left: 10px;
-    box-shadow: 10px 10px 8px 10px #888888;
     min-height: fit-content;
 }
 
@@ -22,6 +22,7 @@ html {
     padding: 1rem; 
     margin: auto;
     background-image: url(bodybg2.png);
+    background-color: rgba(0, 0, 0, 0.849);
 }
 
 .header {
@@ -78,6 +79,10 @@ html {
     font-weight: bold;
 }
 
+.popular a{
+  color: #2b639b
+}
+
 .popular li {
     overflow: hidden;
     padding-left: 0%;
@@ -97,7 +102,7 @@ section::after {
 }
 
 .footer {
-  background-color: yellow;
+  background-color: grey;
   padding: 10px;
   text-align: center;
   color: black;

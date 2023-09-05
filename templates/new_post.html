@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{{ ckeditor.load() }}
+{{ ckeditor.load(pkg_type="basic") }}
+
+<form method="post">
+    <label for="title">Title</label>
+    <input name="title" id="title" value="{{ request.form['title'] }}"required>
+    <br><br>
+    {{ ckeditor.create() }}
+    <br>
+    <input type="submit" value="Post">
+    <br><br>
+</form>
+
+{% endblock %}
