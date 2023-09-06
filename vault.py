@@ -1,4 +1,5 @@
 from chycho.db import get_database
+from bson.objectid import ObjectId
 
 class postRepository:
 
@@ -19,6 +20,12 @@ class postRepository:
 
         return posts.find_one({"title": title})
 
+    def getPostById(self,id):
+        chychoVault = get_database()
+        posts = chychoVault["posts2"]
+        
+        return posts.find_one({"_id": ObjectId(id)})
+
     def searchPosts(self, search_query):
         chychoVault = get_database()
         posts = chychoVault["posts2"]
@@ -33,8 +40,8 @@ class postRepository:
 
         return queried_posts
     
-    def updatePost(self, title, editedPost):
+    def updatePost(self, id, editedPost):
         chychoVault = get_database()
         posts = chychoVault["posts2"]
 
-        posts.update_one({'title': title},{"$set": {'body': editedPost}})
+        posts.update_one({'_id': ObjectId(id)},{"$set": {'body': editedPost}})

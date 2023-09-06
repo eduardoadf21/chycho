@@ -8,7 +8,7 @@
 <div class="content">
     <p><a href="{{url_for('blog.newPost')}}">New Post</a></p>
     <h2>Featured</h2>
-    <h2><a href="{{url_for('blog.getPost',title=posts[0]['title'])}}"> {{ posts[0]['title']}} </a></h2>
+    <h2><a href="{{url_for('blog.getPost',id=posts[0]['_id'])}}"> {{ posts[0]['title']}} </a></h2>
     <iframe id="odysee-iframe" width="560" height="315"
         src="https://odysee.com/$/embed/@chycho:6/BlackberryJam_Aug2023_chycho:d?r=5xfZA3F42Qx5DVRtAHkR8QDRYrDjm2Qi"
         allowfullscreen></iframe>
@@ -18,7 +18,7 @@
     <article>
         <header>
             <div>
-                <h3><a href="{{url_for('blog.getPost',title=post['title'])}}"> {{ post['title']}} </a></h3>
+                <h3><a href="{{url_for('blog.getPost',id=post['_id'])}}"> {{ post['title']}} </a></h3>
                 <div class="about">by {{ post['author'] }} on {{ post['date'].strftime('%Y-%m-%d') }}</div>
                 <br>
             </div>
