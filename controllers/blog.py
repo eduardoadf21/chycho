@@ -33,6 +33,18 @@ def getPost(id):
     post = Posts.getPostById(id)
 
     return render_template('post.html', post=post)
+
+@bp.route("/<tag>", methods=['POST','GET'])
+def getSpecialPost(tag):
+
+    if request.method == 'POST':
+        search_query = request.form['search_query']
+        queried_posts = Posts.searchPosts(search_query)
+        return render_template('search_results.html', posts=queried_posts)
+
+    post = Posts.getPostByTag(tag)
+
+    return render_template('post.html', post=post)
     
 @bp.route("/newPost", methods=['POST','GET'])
 def newPost():
@@ -40,6 +52,7 @@ def newPost():
     if request.method == 'POST':
         title = request.form['title']
         body = request.form['ckeditor']
+        tag = request.form['tag'] 
 
     return render_template('new_post.html')
 
@@ -50,8 +63,9 @@ def editPost(id):
     article_body = post['body']
 
     if request.method == 'POST':
+        tag = request.form['tag']
         body = request.form['ckeditor']
-        Posts.updatePost(id,body)
+        Posts.updatePost(id,body,tag)
 
         return redirect(url_for('blog.getPost', id=id))
 

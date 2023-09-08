@@ -7,8 +7,10 @@
 {{ ckeditor.load(pkg_type="basic") }}
 
 <form method="post">
+    <label for="tag">Tag</label>
+    <input name="tag" id="tag" value="{{ request.form['tag'] }}"><br><br>
     {{ ckeditor.create(value=article_body) }}
-    <input type="submit">
+    <br><input type="submit" name="submit"><br><br>
 </form>
 
 {% endblock %}

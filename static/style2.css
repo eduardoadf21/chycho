@@ -102,7 +102,7 @@ section::after {
 }
 
 .footer {
-  background-color: lightcoral;
+  background-color: rgba(240, 128, 128, 0.801);
   padding: 10px;
   text-align: center;
   color: black;

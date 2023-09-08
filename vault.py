@@ -26,6 +26,12 @@ class postRepository:
         
         return posts.find_one({"_id": ObjectId(id)})
 
+    def getPostByTag(self,tag):
+        chychoVault = get_database()
+        posts = chychoVault["posts2"]
+        
+        return posts.find_one({"tag": tag})
+
     def searchPosts(self, search_query):
         chychoVault = get_database()
         posts = chychoVault["posts2"]
@@ -40,8 +46,12 @@ class postRepository:
 
         return queried_posts
     
-    def updatePost(self, id, editedPost):
+    def updatePost(self, id, editedPost, tag):
         chychoVault = get_database()
         posts = chychoVault["posts2"]
+
+        if tag != "":
+            print(tag)
+            posts.find_one_and_update({'_id': ObjectId(id)},{'$set': {'tag': tag}})
 
         posts.update_one({'_id': ObjectId(id)},{"$set": {'body': editedPost}})
