@@ -17,12 +17,24 @@
         <p>Analysis and discussion about the world we live in</p>
 
         <ul class="topnav">
-            <li><a href="{{url_for('blog.index')}}">Home</a></li>
-            <li><a href="{{url_for('blog.getSpecialPost',tag='about')}}">About</a></li>
-            <li><a href="">Math</a></li>
-            <li><a href="">Food</a></li>
-            <li><a href="">Comics</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#news">About</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Math</a>
+                <div class="dropdown-content">
+                <a href="#">The Language Of Mathematics</a>
+                <a href="#">Math in Real Life</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Comics</a>
+                <div class="dropdown-content">
+                <a href="#">Comic Haul</a>
+                <a href="#">Comic Reading</a>
+                </div>
+            </li>
         </ul>
+
 
         <div class="sidebar">
             {% block sidebar %}{% endblock %}
