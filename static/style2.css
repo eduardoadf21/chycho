@@ -31,18 +31,17 @@ html {
     padding: 20px;
 }
 
+.topnav{
+  background-color: lightgrey;
+}
+
 .topnav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-}
-
-ul {
   background-color: lightgrey;
 }
-
-
 .topnav li {
   float: left;
   overflow: hidden;
@@ -75,6 +74,7 @@ ul {
 .topnav .dropdown-content a {
   color: black;
   padding: 12px 16px;
+  font-size: 12px;
   text-decoration: none;
   display: block;
   text-align: left;
@@ -92,6 +92,8 @@ ul {
   width: 70%;
   position: relative;
 }
+
+
 
 
 .popular {
