@@ -10,6 +10,7 @@
     <label for="tag">Tag</label>
     <input name="tag" id="tag" value="{{ request.form['tag'] }}"><br><br>
     {{ ckeditor.create(value=article_body) }}
+    {{ ckeditor.config(height=2000) }}
     <br><input type="submit" name="submit"><br><br>
 </form>
 

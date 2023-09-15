@@ -1,5 +1,6 @@
 a, a:visited, a:hover, a:active {
-  color: #0051ff;
+  /*color: #0051ff;*/
+  color: #b82020;
   text-decoration: none;
 }
 
@@ -9,7 +10,7 @@ a, a:visited, a:hover, a:active {
     margin-left: auto;
     margin-bottom: auto;
     align-self: center;
-    max-width: 980px;
+    max-width: 1080px;
     padding-top: 5px;
     padding-right: 10px;
     padding-left: 10px;
@@ -17,22 +18,26 @@ a, a:visited, a:hover, a:active {
 }
 
 html { 
-    font-family: normal normal 12px Arial, Tahoma, Helvetica, FreeSans, sans-serif; 
+    font-family: normal normal 12px Arial, Tahoma, Helvetica, FreeSans, sans-ikjuuuuuuuuuuujserif; 
     background-color: darkgray;
     padding: 1rem; 
     margin: auto;
     background-image: url(bodybg2.png);
-    background-color: rgba(0, 0, 0, 0.849);
+    /*background-color: rgba(0, 0, 0, 0.849);*/
+    background-color: #ac1f42f1;
 }
 
 .header {
-    background-color: grey;
+    background-color: black;
     text-align: center;
     padding: 20px;
+    color: white;
 }
+
 
 .topnav{
   background-color: lightgrey;
+  height: min-content;
 }
 
 .topnav ul {
@@ -104,7 +109,8 @@ html {
 }
 
 .popular a{
-  color: #2b639b
+  /*color: #2b639b*/
+  color: #b82020d2;
 }
 
 .popular li {
@@ -138,8 +144,8 @@ section::after {
 }
 
 .footer {
-  background-color: rgba(240, 128, 128, 0.801);
+  background-color: black;
   padding: 10px;
   text-align: center;
-  color: black;
+  color: white;
 }

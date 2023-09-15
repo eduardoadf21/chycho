@@ -9,9 +9,9 @@
     <p><a href="{{url_for('blog.newPost')}}">New Post</a></p>
     <h2>Featured</h2>
     <h2><a href="{{url_for('blog.getPost',id=posts[0]['_id'])}}"> {{ posts[0]['title']}} </a></h2>
-    <iframe id="odysee-iframe" width="560" height="315"
-        src="https://odysee.com/$/embed/@chycho:6/BlackberryJam_Aug2023_chycho:d?r=5xfZA3F42Qx5DVRtAHkR8QDRYrDjm2Qi"
-        allowfullscreen></iframe>
+    <html class="post">
+        {{ posts[0]['body'] | safe }}
+    </html>
     <br>
     <h3>Latest</h3>
     {% for post in posts[1:] %}
@@ -23,10 +23,6 @@
                 <br>
             </div>
         </header>
-        <html class="post">
-        {{ post['body'] | safe }}
-
-        </html>
         <hr>
     </article>
     {% endfor %}
