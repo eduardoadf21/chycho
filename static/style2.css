@@ -1,6 +1,6 @@
 a, a:visited, a:hover, a:active {
   /*color: #0051ff;*/
-  color: #b82020;
+  color: #8f0505;
   text-decoration: none;
 }
 
@@ -24,7 +24,7 @@ html {
     margin: auto;
     background-image: url(bodybg2.png);
     /*background-color: rgba(0, 0, 0, 0.849);*/
-    background-color: #ac1f42f1;
+    background-color: #470a01;
 }
 
 .header {
@@ -99,8 +99,6 @@ html {
 }
 
 
-
-
 .popular {
     position: relative;
     font-size: 15px;
@@ -110,7 +108,7 @@ html {
 
 .popular a{
   /*color: #2b639b*/
-  color: #b82020d2;
+  color: #8f0505d8;;
 }
 
 .popular li {
