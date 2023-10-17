@@ -1,0 +1,6 @@
+script for scraping food page
+script for tagging politics articles
+script for tagging popular articles
+
+specify more tags for specific politics articles
+
