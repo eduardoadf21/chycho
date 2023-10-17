@@ -45,6 +45,18 @@ def getSpecialPost(tag):
     post = Posts.getPostByTag(tag)
 
     return render_template('post.html', post=post)
+
+@bp.route("/index/<type>", methods=['POST','GET'])
+def getPostsByType(type):
+
+    if request.method == 'POST':
+        search_query = request.form['search_query']
+        queried_posts = Posts.searchPosts(search_query)
+        return render_template('search_results.html', posts=queried_posts)
+
+    posts = Posts.searchPostsByType(type)
+
+    return render_template('search_results.html', posts=posts)
     
 @bp.route("/newPost", methods=['POST','GET'])
 def newPost():
