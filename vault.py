@@ -32,6 +32,18 @@ class postRepository:
         
         return posts.find_one({"tag": tag})
 
+    def searchPostsByTag(self,tag):
+        chychoVault = get_database()
+        posts = chychoVault["posts2"]
+        
+        posts = posts.find({"tag": tag})
+        post_list = []
+        for post in posts:
+            post_list.append(post)
+            print(post['title'])
+
+        return post_list
+
     def searchPostsByType(self,type):
         chychoVault = get_database()
         posts = chychoVault["posts2"]

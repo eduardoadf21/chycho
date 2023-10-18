@@ -19,7 +19,7 @@ def index():
             
     posts = Posts.getPosts()
 
-    return render_template('index.html', posts=posts[0:4])
+    return render_template('index.html', posts=posts[0:4], popular=getPopular())
 
 
 @bp.route("/<id>/", methods=['POST','GET'])
@@ -28,11 +28,11 @@ def getPost(id):
     if request.method == 'POST':
         search_query = request.form['search_query']
         queried_posts = Posts.searchPosts(search_query)
-        return render_template('search_results.html', posts=queried_posts)
+        return render_template('search_results.html', posts=queried_posts, popular=getPopular())
 
     post = Posts.getPostById(id)
 
-    return render_template('post.html', post=post)
+    return render_template('post.html', post=post, popular=getPopular())
 
 @bp.route("/<tag>", methods=['POST','GET'])
 def getSpecialPost(tag):
@@ -44,7 +44,7 @@ def getSpecialPost(tag):
 
     post = Posts.getPostByTag(tag)
 
-    return render_template('post.html', post=post)
+    return render_template('post.html', post=post, popular=getPopular())
 
 @bp.route("/index/<type>", methods=['POST','GET'])
 def getPostsByType(type):
@@ -56,7 +56,7 @@ def getPostsByType(type):
 
     posts = Posts.searchPostsByType(type)
 
-    return render_template('search_results.html', posts=posts)
+    return render_template('search_results.html', posts=posts, popular=getPopular())
     
 @bp.route("/newPost", methods=['POST','GET'])
 def newPost():
@@ -67,6 +67,15 @@ def newPost():
         tag = request.form['tag'] 
 
     return render_template('new_post.html')
+
+@bp.route('/vault', methods=['POST','GET'])
+def vault():
+    select = request.form.get('tag')
+    if select is not None:
+        print(select)
+        return redirect(url_for('blog.getPostsByType', type=select))
+
+    return render_template('vault.html')
 
 @bp.route('/edit/<id>/', methods=['POST','GET'])
 def editPost(id):
@@ -82,5 +91,10 @@ def editPost(id):
         return redirect(url_for('blog.getPost', id=id))
 
     return render_template('edit_post.html', article_body=article_body)
+
+def getPopular():
+    posts = Posts.searchPostsByTag("popular")
+
+    return posts 
 
 

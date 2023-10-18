@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block sidebar %}
+    {% include 'sidebar.html' %}
+{% endblock %}
+
 {% block content %}
 <div class="content">
     <h2>{{ posts|length }} results</h2>

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+    {% include 'sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+<body>
+    <form action="{{url_for('blog.vault')}}" method="post">
+    <label for="cars"></label>
+    <select name="tag" id="tag">
+        <option value="volvo">Privacy</option>
+        <option value="saab">420</option>
+        <option value="politics">Politics</option>
+        <option value="audi">Economics</option>
+        <option value="audi">Science</option>
+        <option value="audi">Environment</option>
+        <option value="audi">Life and Death</option>
+        <option value="audi">Entertainment</option>
+        <option value="audi">Education</option>
+        <option value="audi">Games and Gambling</option>
+        <option value="audi">Psychedelics</option>
+        <option value="audi">Technology</option>
+        <option value="audi">Comic Books</option>
+        <option value="audi">Miscellaneous</option>
+        <option value="audi">Chycho TV</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Submit">
+    </form>
+</body>
+{% endblock %}

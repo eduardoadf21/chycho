@@ -1,34 +1,9 @@
-    <h2>Popular Posts</h2>
-        <l>
+<h2>Popular Posts</h2>
+    <l>
+        {% for post in popular %}
             <li>
-                <a href="https://chycho.blogspot.com/2013/11/bill-nye-brian-greene-neil-degrasse.html">Bill Nye, Brian
-                    Greene, Neil deGrasse Tyson, and Lawrence Krauss have a brilliant little discussion on the
-                    limitations of mathematics, and its importance and relevance to humanity</a>
-            </li> <br>
-            <li>
-                <a href="https://chycho.blogspot.com/2014/01/an-exercise-for-mind-10-by-10-math.html">An Exercise for
-                    the Mind: a 10 by 10 Math Puzzle: a Pattern Recognition Game: Meditation on an Open Maze </a>
-            </li> <br>
-            <li>
-                <a href="https://chycho.blogspot.com/2014/05/best-explanation-of-quantum-field.html"> Best Explanation
-                    of Quantum Field Theory That You Will Ever Hear, Provided by Sean Carroll in Less than 2 Minutes at
-                    the 46th Annual Fermilab Users Meeting</a>
-            </li> <br>
-            <li>
-                <a href="https://chycho.blogspot.com/2013/09/target-is-still-iran-clear-cutting.html">Target is Still
-                    Iran: Clear Cutting the Middle East and the Coming Blood Bath (Mapping World War III)</a>
-            </li> <br>
-            <li>
-                <a href="https://chycho.blogspot.com/2014/01/its-not-just-mainstream-media-that-is.html">It’s Not Just
-                    the Mainstream Media That Is Scripted to Manufacture Consent, so Are Our Politicians</a>
-            </li> <br>
-            <li>
-                <a href="https://chycho.blogspot.com/2013/09/schooling-superman-on-totalitarianism.html">Schooling
-                    Superman on Totalitarianism: Superman and The Flash have a discussion about gun control while
-                    playing chess</a>
-            </li> <br>
-            <li>
-                <a href="https://chycho.blogspot.com/2013/09/the-surveillance-state-killed.html">The Surveillance State
-                    Killed BlackBerry, and the Same Fate Awaits Other Tech Giants (Update 5)</a>
+                <a href="{{url_for('blog.getPost',id=post['_id'])}}"> {{ post['title']}} </a>
             </li>
-        </l>
+            <br>
+        {% endfor %}
+    </l>

@@ -19,7 +19,8 @@
         <ul class="topnav">
             <li><a href="{{url_for('blog.index')}}">Home</a></li>
             <li><a href="{{url_for('blog.getSpecialPost',tag='about')}}">About</a></li>
-            <li><a href="#">Food</a></li>
+            <li><a href="{{url_for('blog.getSpecialPost',tag='')}}">Schedule</a></li>
+            <li><a href="{{url_for('blog.vault')}}">Vault</a></li>
             <li class="dropdown">
                 <a href="#" class="dropbtn">Math</a>
                 <div class="dropdown-content">
@@ -30,15 +31,22 @@
                 </div>
             </li>
             <li><a href="{{url_for('blog.getSpecialPost',tag='comic')}}">Comic Books</a></li>
-            <li><a href="{{url_for('blog.getPostsByType',type='politics')}}">Politics</a></li>
-            <li><a href="{{url_for('blog.getPostsByType',type='politics')}}">Entheogens</a></li>
             <li><a href="{{url_for('blog.getPostsByType',type='politics')}}">Contact</a></li>
             <li><a href="{{url_for('blog.getPostsByType',type='politics')}}">Support</a></li>
         </ul>
 
 
         <div class="sidebar">
-            {% block sidebar %}{% endblock %}
+            {% block sidebar %}
+                <l>
+                    {% for post in popular %}
+                        <li>
+                            <a href="{{url_for('blog.getPost',id=post['_id'])}}"> {{ post['title']}} </a>
+                        </li>
+                        <br>
+                    {% endfor %}
+                </l>
+            {% endblock %}
         </div>
 
         <section>

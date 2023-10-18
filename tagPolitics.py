@@ -22,7 +22,7 @@ titles = ("Synopsis of Our Present Predicament: What the Future Holds, a Final W
      "It’s Not the Economy Stupid, It’s Your Stupid Foreign Policy: How to Get Rid of Our Oligarchs",
      "A Music Video from Egypt with a Message: “Some people are dancing and others are dying, and the loudest voice in the party is the voice of silence”, Cairokee",
      "When Mainstream Media’s Narrative Collapses: Building 7",
-     "What Cold War? This Cold War: Death Follows McCain to the Ukraine as the Armenia-ultimatum to Screw over Russia Fails Again for the EU and the U.S.",
+     "What Cold War?",
      "The Irony and the Hypocrisy, the U.S. Department of Defense Is Using Blackberry for Its Privacy",
      "Excellent Interview and Discussion on the Current State of Affairs in Turkey and What the Future May Hold for the Region",
      "It’s Not Just the Mainstream Media That Is Scripted to Manufacture Consent, so Are Our Politicians",
@@ -41,10 +41,10 @@ titles = ("Synopsis of Our Present Predicament: What the Future Holds, a Final W
      "“Pretending that one can dissociate torture from war or abjection from massacre is the lie of the powerful”, ‘Ordinary Victories’ by Manu Larcenet",
      "Schooling Superman on Totalitarianism: Superman and The Flash have a discussion about gun control while playing chess",
      "In Recognition of Endless Wars and Those Who Profit From Them: The Savage Sword of Conan",
-     "CONFIRMED: U.S. government knew that revelations about NSA’s PRISM program would hurt American Technology companies, but they didn’t “really really care”, Bart Gellman",
+     "U.S. government knew that revelations about NSA’s PRISM program would hurt American Technology companies, but they didn’t “really really care”, Bart Gellman",
      "What will make or break the United States of America is the truth about 9/11: Investigate the theories behind the conspiracies",
      "Target is Still Iran: Clear Cutting the Middle East and the Coming Blood Bath (Mapping World War III)",
-     "One, Two, Three, Four, When Are We Going to Go to War? Five, Six, Seven, Eight, Are You Out of Your F__king Mind! (What We Should Know Before Waging War on Syria)",
+     "One, Two, Three",
      "Why the U.S. Government has such a hard-on for Edward Snowden",
      "Here is What’s Going On in Canada, Part 1: Two Telltale Speeches by Stephen Harper",
      "So let me get this straight, we fast track renditions but hunt down whistleblowers on presidential planes!",
@@ -62,8 +62,8 @@ titles = ("Synopsis of Our Present Predicament: What the Future Holds, a Final W
      "France Has Forgotten the Battle of Algiers, Africa Never Will: “Ordinary Victories” by Manu Larcenet",
      "Western Powers Go Full Retard on Africa: China vs. AFRICOM, a Resource War",
      "Aaron Swartz, America’s Mohamed Bouazizi: We’re in the midst of a revolution, which side are you on?",
-     "Lest we forget, an attack on Syria is an attack on Iran and a threat to the SCO",
-     "Obama’s Crocodile Tears and Madeleine Albright’s Hard Choices: Sandy Hook (Newtown)",
+     "Lest we forget, an attack on Syria is an attack on Iran",
+     "Obama’s Crocodile Tears and Madeleine Albright’s Hard Choices:",
      "A Dinner Conversation: Israel and Armenia, Oppression and Genocides, Reality and Denials",
      "Bradley Manning and the trial of the United States Military",
      "An Apology from Canada to Palestine and the Rest of the World",
@@ -72,7 +72,7 @@ titles = ("Synopsis of Our Present Predicament: What the Future Holds, a Final W
      "What to Expect from the Obama Administration for the Next Four Years",
      "The Presidential Debate that Most Americans Didn’t See, and Why",
      "A Candid Speaker and Three Hypocrites address the 67th session of the United Nations General Assembly",
-     "Dahr Jamail on what happened in Fallujah: War Crimes")
+     "Dahr Jamail on what happened in Fallujah")
 
 
 for title in titles:
