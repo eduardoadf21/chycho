@@ -1,8 +1,10 @@
+<br>
 <div class="search-container">
     <form method="post">
         <input type="text" placeholder="Search..." name="search_query" ,
             value="{{request.form['search_query']}}">
     </form>
 </div>
+<br>
 <img src="{{ url_for('static', filename='free_chycho.jpeg') }}">
 <div class="popular">{% include 'popular.html' %}</div>

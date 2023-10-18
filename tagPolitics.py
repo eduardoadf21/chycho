@@ -5,7 +5,7 @@ posts = chychoVault["posts2"]
 
 
 titles = ("Synopsis of Our Present Predicament: What the Future Holds, a Final Word ",
-    "The Best Advice Regarding the Importance of Education That You Will Ever Hear: Some Wise Words from Ex-child Soldier, Omar Khadr",
+    "The Best Advice Regarding the Importance of Education That You Will Ever Hear: Some Wise Words from Ex-child Soldier, Omar Khadr ",
      "The Subjugation of Africa, the Battle for a Continent: Full Throttle into Oblivion",
      "For the Age of the Information Wars, Some Pertinent Quotes Regarding the Future of Humanity: Stephen Hawking, Carl Sagan, Isaac Asimov, John F. Kennedy, William Thurston, Jacob Appelbaum, and Assata Shakur",
      "Heads-up Canada, B.C. Government Has Given Industry Access to Our Parks: A Drift Card I Found on the Beach",
@@ -76,4 +76,4 @@ titles = ("Synopsis of Our Present Predicament: What the Future Holds, a Final W
 
 
 for title in titles:
-    posts.find_one_and_update({'title': title},{'$set':{'tag':''}})
+    posts.find_one_and_update({'title': {"$regex": title}},{'$set':{'type':'politics'}})
