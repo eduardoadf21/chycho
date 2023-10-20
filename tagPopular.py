@@ -29,4 +29,4 @@ titles = ("An Exercise for the Mind: a 10 by 10 Math Puzzle: a Pattern Recogniti
       "Target is Still Iran: Clear Cutting the Middle East and the Coming Blood Bath (Mapping World War III) ")
 
 for title in titles:
-    posts.find_one_and_update({'title': {"$regex": title}},{'$set':{'tag':'popular'}})
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':["popular"]}})
