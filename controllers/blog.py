@@ -19,7 +19,7 @@ def index():
             
     posts = Posts.getPosts()
 
-    return render_template('index.html', posts=posts[0:4], popular=getPopular())
+    return render_template('index.html', posts=posts[0:8], popular=getPopular())
 
 
 @bp.route("/<id>/", methods=['POST','GET'])
@@ -46,15 +46,15 @@ def getSpecialPost(tag):
 
     return render_template('post.html', post=post, popular=getPopular())
 
-@bp.route("/index/<type>", methods=['POST','GET'])
-def getPostsByType(type):
+@bp.route("/index/<tag>", methods=['POST','GET'])
+def getPostsByTag(tag):
 
     if request.method == 'POST':
         search_query = request.form['search_query']
         queried_posts = Posts.searchPosts(search_query)
         return render_template('search_results.html', posts=queried_posts)
 
-    posts = Posts.searchPostsByType(type)
+    posts = Posts.searchPostsByTag(tag)
 
     return render_template('search_results.html', posts=posts, popular=getPopular())
     
@@ -73,7 +73,7 @@ def vault():
     select = request.form.get('tag')
     if select is not None:
         print(select)
-        return redirect(url_for('blog.getPostsByType', type=select))
+        return redirect(url_for('blog.getPostsByTag', tag=select))
 
     return render_template('vault.html')
 

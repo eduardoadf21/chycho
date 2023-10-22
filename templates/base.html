@@ -24,15 +24,15 @@
             <li class="dropdown">
                 <a href="#" class="dropbtn">Math</a>
                 <div class="dropdown-content">
-                <a href="{{url_for('blog.getSpecialPost',tag='math')}}">Finding What You Need</a>
+                <a href="{{url_for('blog.getSpecialPost',tag='finding_math')}}">Finding What You Need</a>
                 <a href="#">The Language Of Mathematics</a>
                 <a href="{{url_for('blog.getSpecialPost',tag='real_math')}}">Math in Real Life</a>
                 <a href="{{url_for('blog.getSpecialPost',tag='asmr_math')}}">ASMR Math</a>
                 </div>
             </li>
-            <li><a href="{{url_for('blog.getSpecialPost',tag='comic')}}">Comic Books</a></li>
-            <li><a href="{{url_for('blog.getPostsByType',type='politics')}}">Contact</a></li>
-            <li><a href="{{url_for('blog.getPostsByType',type='politics')}}">Support</a></li>
+            <li><a href="{{url_for('blog.getSpecialPost',tag='all_about_comics')}}">Comic Books</a></li>
+            <li><a href="{{url_for('blog.getPostsByTag',tag='politics')}}">Contact</a></li>
+            <li><a href="{{url_for('blog.getSpecialPost',tag='support')}}">Support</a></li>
         </ul>
 
 
