@@ -13,14 +13,15 @@
 <body class="wrapper">
     <div>
 
-        <h1 class="header">chycho.net</h1>
-        <p>Analysis and discussion about the world we live in</p>
+        <h1 class="header">chycho.net
+
+        </h1>
+            <p style="text-align: center;"> Analysis and discussion about the world we live in</p>
 
         <ul class="topnav">
             <li><a href="{{url_for('blog.index')}}">Home</a></li>
             <li><a href="{{url_for('blog.getSpecialPost',tag='about')}}">About</a></li>
             <li><a href="{{url_for('blog.getSpecialPost',tag='')}}">Schedule</a></li>
-            <li><a href="{{url_for('blog.vault')}}">Vault</a></li>
             <li class="dropdown">
                 <a href="#" class="dropbtn">Math</a>
                 <div class="dropdown-content">
@@ -30,9 +31,16 @@
                 <a href="{{url_for('blog.getSpecialPost',tag='asmr_math')}}">ASMR Math</a>
                 </div>
             </li>
+            <li><a href="{{url_for('blog.getSpecialPost',tag='support')}}">ASMR</a></li>
             <li><a href="{{url_for('blog.getSpecialPost',tag='all_about_comics')}}">Comic Books</a></li>
-            <li><a href="{{url_for('blog.getPostsByTag',tag='politics')}}">Contact</a></li>
+            <li><a href="{{url_for('blog.getSpecialPost',tag='support')}}">Food</a></li>
+            <li><a href="{{url_for('blog.getSpecialPost',tag='support')}}">Book Club</a></li>
+            <li><a href="{{url_for('blog.getSpecialPost',tag='support')}}">Politics</a></li>
+            <li><a href="{{url_for('blog.getSpecialPost',tag='support')}}">Economics</a></li>
+            <li><a href="{{url_for('blog.getPostsByTag',tag='politics')}}">Privacy</a></li>
+            <li><a href="{{url_for('blog.getPostsByTag',tag='politics')}}">Entheogens</a></li>
             <li><a href="{{url_for('blog.getSpecialPost',tag='support')}}">Support</a></li>
+            <li><a href="{{url_for('blog.getPostsByTag',tag='politics')}}">Contact</a></li>
         </ul>
 
 

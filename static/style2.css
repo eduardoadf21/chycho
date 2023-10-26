@@ -1,42 +1,32 @@
-a, a:visited, a:hover, a:active {
-  /*color: #0051ff;*/
-  color: #8f0505;
+a { 
   text-decoration: none;
 }
 
-.wrapper {
-    background-color: whitesmoke;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: auto;
-    align-self: center;
-    max-width: 1080px;
-    padding-top: 5px;
-    padding-right: 10px;
-    padding-left: 10px;
-    min-height: fit-content;
+html {
+  background-color: whitesmoke;
+  box-shadow: 200px 300px 200px black, 0 0 60px #aa7037 inset;
+  background: #fffef0;
+  filter: url(#wavy2);
+
 }
 
-html { 
-    font-family: normal normal 12px Arial, Tahoma, Helvetica, FreeSans, sans-ikjuuuuuuuuuuujserif; 
-    background-color: darkgray;
-    padding: 1rem; 
-    margin: auto;
-    background-image: url(bodybg2.png);
-    /*background-color: rgba(0, 0, 0, 0.849);*/
-    background-color: #470a01;
+a:hover{
+  /*color: #0051ff;*/
+  text-decoration: underline;
 }
-
 .header {
-    background-color: black;
+    color:white;
     text-align: center;
-    padding: 20px;
-    color: white;
+    font-size: 75px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0%;
+    margin-top:0%;
+    background-color: black;
 }
 
 
 .topnav{
-  background-color: lightgrey;
+  background-color: black;
   height: min-content;
 }
 
@@ -54,13 +44,16 @@ html {
 
 .topnav li a, .dropbtn {
   display: inline-block;
-  color: black;
+  color: white;
   text-align: center;
-  padding: 14px 16px;
+  margin: 0%;
+  text-decoration: none;
+  font-weight: bolder;
+  padding: 8px 8px;
 }
 
 .topnav li a:hover, .dropdown:hover .dropbtn {
-  background-color: whitesmoke;
+  background-color: red;
 }
 
 .topnav li.dropdown {
@@ -98,6 +91,14 @@ html {
   position: relative;
 }
 
+.content a {
+  color: black;
+}
+.content a:hover {
+  color: red;
+}
+
+
 
 .popular {
     position: relative;
@@ -105,10 +106,11 @@ html {
     left: -40;
     font-weight: bold;
 }
-
 .popular a{
-  /*color: #2b639b*/
-  color: #8f0505d8;;
+  color: black;
+}
+.popular a:hover{
+  color: red;
 }
 
 .popular li {
@@ -142,8 +144,7 @@ section::after {
 }
 
 .footer {
-  background-color: black;
   padding: 10px;
   text-align: center;
-  color: white;
+  color: black;
 }
