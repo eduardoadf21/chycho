@@ -4,7 +4,7 @@ a {
 
 html {
   background-color: whitesmoke;
-  filter: grayscale(25%)
+  filter: grayscale(15%)
 }
 
 a:hover{
@@ -12,9 +12,10 @@ a:hover{
 }
 .header {
     color:white;
-    text-align: left;
+    text-align: center;
     font-size: 50px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /*font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;*/
+    font-family: Impact;
     margin: 0%;
     margin-top:0%;
     padding-bottom: 2px;
@@ -43,7 +44,6 @@ a:hover{
   text-align: left;
   margin: 0%;
   text-decoration: none;
-  font-weight: bolder;
   padding: 8px 8px;
 }
 .topnav li a:hover, .dropdown:hover .dropbtn {
