@@ -4,32 +4,28 @@ a {
 
 html {
   background-color: whitesmoke;
-  box-shadow: 200px 300px 200px black, 0 0 60px #aa7037 inset;
-  background: #fffef0;
-  filter: url(#wavy2);
-
+  filter: grayscale(25%)
 }
 
 a:hover{
-  /*color: #0051ff;*/
   text-decoration: underline;
 }
 .header {
     color:white;
-    text-align: center;
-    font-size: 75px;
+    text-align: left;
+    font-size: 50px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: 0%;
     margin-top:0%;
+    padding-bottom: 2px;
+    padding-left: 10px;
     background-color: black;
 }
-
 
 .topnav{
   background-color: black;
   height: min-content;
 }
-
 .topnav ul {
   list-style-type: none;
   margin: 0;
@@ -41,25 +37,21 @@ a:hover{
   float: left;
   overflow: hidden;
 }
-
 .topnav li a, .dropbtn {
   display: inline-block;
   color: white;
-  text-align: center;
+  text-align: left;
   margin: 0%;
   text-decoration: none;
   font-weight: bolder;
   padding: 8px 8px;
 }
-
 .topnav li a:hover, .dropdown:hover .dropbtn {
   background-color: red;
 }
-
 .topnav li.dropdown {
   display: inline-block;
 }
-
 .topnav .dropdown-content {
   display: none;
   position: absolute;
@@ -68,7 +60,6 @@ a:hover{
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
-
 .topnav .dropdown-content a {
   color: black;
   padding: 12px 16px;
@@ -76,11 +67,10 @@ a:hover{
   text-decoration: none;
   display: block;
   text-align: left;
-
 }
-
-.topnav .dropdown-content a:hover {background-color: #f1f1f1;}
-
+.topnav .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
 .topnav .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -90,15 +80,12 @@ a:hover{
   width: 70%;
   position: relative;
 }
-
 .content a {
   color: black;
 }
 .content a:hover {
   color: red;
 }
-
-
 
 .popular {
     position: relative;
@@ -112,12 +99,16 @@ a:hover{
 .popular a:hover{
   color: red;
 }
-
 .popular li {
     overflow: hidden;
     padding-left: 0%;
 }
 
+.footer {
+  padding: 10px;
+  text-align: center;
+  color: black;
+}
 
 .sidebar {
   float: right;
@@ -141,10 +132,4 @@ section::after {
   content: "";
   display: table;
   clear: both;
-}
-
-.footer {
-  padding: 10px;
-  text-align: center;
-  color: black;
 }
