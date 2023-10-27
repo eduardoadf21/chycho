@@ -1,10 +1,23 @@
 <br>
-<div class="search-container">
+<div class="search-container" style="text-align: center;">
     <form method="post">
         <input type="text" placeholder="Search..." name="search_query" ,
-            value="{{request.form['search_query']}}">
+            value="{{request.form['search_query']}}"style="width:240px">
     </form>
 </div>
-<br>
-<img src="{{ url_for('static', filename='free_chycho.jpeg') }}">
+<ul class=social-list>
+	<li><a href="#" class="social-icon"><img src="{{ url_for('static', filename='social_icons/twitch_32px.png') }}"></a></li>
+	<li><a href="#" class="social-icon"><img src="{{ url_for('static', filename='social_icons/rumble_32px.png') }}"></a></li>
+	<li><a href="#" class="social-icon"><img src="{{ url_for('static', filename='social_icons/bitchute_32px.webp') }}"></a></li>
+	<li><a href="#" class="social-icon"><img src="{{ url_for('static', filename='social_icons/substack_32px.png') }}"></a></li>
+	<li><a href="#" class="social-icon"><img src="{{ url_for('static', filename='social_icons/soundcloud_32px.ico') }}"></a></li>
+	<li><a href="#" class="social-icon"><img src="{{ url_for('static', filename='social_icons/twitter_32px.png') }}"></a></li>
+	<li><a href="#" class="social-icon"><img src="{{ url_for('static', filename='social_icons/vk_32px.png') }}"></a></li>
+	<li><a href="#" class="social-icon"><img src="{{ url_for('static', filename='social_icons/gab_32px.ico') }}"></a></li>
+	<li><a href="#" class="social-icon"><img src="{{ url_for('static', filename='social_icons/minds_32px.png') }}"></a></li>
+	<li><a href="#" class="social-icon"><img src="{{ url_for('static', filename='social_icons/youtube_32px.png') }}"></a></li>
+</ul>
 <div class="popular">{% include 'popular.html' %}</div>
+<img src="{{ url_for('static', filename='mathinreallife_chycho.jpg') }}">
+<img src="{{ url_for('static', filename='420math_chycho.jpg') }}">
+<!--<p style="text-align: center"><img src="{{ url_for('static', filename='free_chycho.jpeg') }}"></p>-->
