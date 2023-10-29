@@ -147,7 +147,7 @@ section::after {
 	padding-top: 8px;
 	border: round;
 	border-radius: 30px;
-	background-color: #f0cbcb;
+	background-color: #e7cbcb;
 	background-image: url("noisy.png");
 }
 .social-icon{

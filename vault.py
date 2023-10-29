@@ -1,6 +1,6 @@
 from chycho.db import get_database
-from bson.objectid import ObjectId
 import pymongo
+from bson.objectid import ObjectId
 import datetime
 
 class postRepository:
@@ -105,7 +105,7 @@ class postRepository:
         chychoVault = get_database()
         posts = chychoVault["posts3"]
 
-        posts.delete_one({"id": id})
+        posts.delete_one({"_id": ObjectId(id)})
 
 class userRepository:
     def getUser(self,username,password):
