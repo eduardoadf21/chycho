@@ -3,15 +3,22 @@
 
 {% block content %}
 
+
 {{ ckeditor.load() }}
 {{ ckeditor.load(pkg_type="basic") }}
+    
 
 <form method="post">
-    <label for="tag">Tag</label>
+    <label for="tag-selector" style="font-weight: bold;">Select Tag(s):</label>
+
+
+    {% include 'tag_selector.html' %} 
+
+    <label for="tag" style="font-weight: bold;">New Tag (make it something like "book_club", no spaces or special characters)</label><br>
     <input name="tag" id="tag" value="{{ request.form['tag'] }}"><br><br>
     {{ ckeditor.create(value=article_body) }}
-    {{ ckeditor.config(height=750) }}
-    <br><input type="submit" name="submit"><br><br>
+    {{ ckeditor.config(height=350) }}
+    <br><input type="submit" name="submit" value="Submit"><br><br>
 </form>
 
 {% endblock %}

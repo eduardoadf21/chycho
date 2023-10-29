@@ -1,5 +1,6 @@
 from flask import Flask
 from chycho.vault import postRepository
+from chycho.controllers.auth import login_required
 
 from flask import (
     Blueprint, render_template, request, redirect, url_for
@@ -59,12 +60,17 @@ def getPostsByTag(tag):
     return render_template('search_results.html', posts=posts, popular=getPopular())
     
 @bp.route("/newPost", methods=['POST','GET'])
+@login_required
 def newPost():
 
     if request.method == 'POST':
+        
         title = request.form['title']
+        tags = request.form.getlist('tags')
         body = request.form['ckeditor']
         tag = request.form['tag'] 
+        Posts.newPost(title,body,tag,tags)
+        return redirect(url_for('blog.index'))
 
     return render_template('new_post.html')
 
@@ -78,15 +84,20 @@ def vault():
     return render_template('vault.html')
 
 @bp.route('/edit/<id>/', methods=['POST','GET'])
+@login_required
 def editPost(id):
     post = Posts.getPostById(id)
 
+
     article_body = post['body']
 
+
     if request.method == 'POST':
+        tags = request.form.getlist('tags')
         tag = request.form['tag']
         body = request.form['ckeditor']
-        Posts.updatePost(id,body,tag)
+        Posts.updatePost(id,body,tag,tags)
+        print(tags)
 
         return redirect(url_for('blog.getPost', id=id))
 

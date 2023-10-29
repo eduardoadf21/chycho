@@ -123,6 +123,7 @@ section::after {
   clear: both;
 }
 
+
 .topnav li::after {
   content: "";
   display: table;
@@ -139,7 +140,7 @@ section::after {
 	padding: 0;
 	list-style-type:none;
 	display: grid;
-	grid-template-columns: auto auto auto auto;
+	grid-template-columns: auto auto auto;
 	background: lightgrey;
 	grid-gap: 6px 0px;
 	text-align: center;
@@ -158,8 +159,20 @@ section::after {
   opacity: 0.4;
   text-decoration: none;
 }
-
-
+.tag-selector {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Create a 3-column grid */
+  grid-gap: 0px;
+  font-size: 16px;
+  max-width: fit-content;
+}
+.tag-selector label{
+  padding: 0px;
+  margin: 0;
+}
+.checkbox{
+ scale: 1.2;
+}
 
 
 

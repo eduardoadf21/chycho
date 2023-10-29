@@ -27,5 +27,8 @@ def create_app(test_config=None):
 
     from chycho.controllers import blog
     app.register_blueprint(blog.bp)
+    
+    from chycho.controllers import auth
+    app.register_blueprint(auth.bp)
 
     return app

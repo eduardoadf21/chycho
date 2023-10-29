@@ -1,12 +1,14 @@
 from chycho.db import get_database
 from bson.objectid import ObjectId
+import pymongo
+import datetime
 
 class postRepository:
 
     def getPosts(self):
         chychoVault = get_database()
         posts = chychoVault["posts3"]
-        posts_dicts = posts.find()
+        posts_dicts = posts.find().sort('date',pymongo.DESCENDING)
 
         all_posts = []
         for post in posts_dicts:
@@ -36,11 +38,12 @@ class postRepository:
         chychoVault = get_database()
         posts = chychoVault["posts3"]
         
-        posts = posts.find({"tag": tag})
+        posts = posts.find({"tag": tag}).sort('date',pymongo.DESCENDING)
+
         post_list = []
         for post in posts:
             post_list.append(post)
-            print(post['title'])
+            #print(post['title'])
 
         return post_list
 
@@ -52,7 +55,7 @@ class postRepository:
         post_list = []
         for post in posts:
             post_list.append(post)
-            print(post['title'])
+            #print(post['title'])
 
         return post_list
 
@@ -66,16 +69,45 @@ class postRepository:
         queried_posts = []
         for post in search_results:
             queried_posts.append(post)
-            print(post['title'])
+            #print(post['title'])
 
         return queried_posts
     
-    def updatePost(self, id, editedPost, tag):
+    def updatePost(self, id, editedPost, tag, tags):
         chychoVault = get_database()
         posts = chychoVault["posts3"]
 
         if tag != "":
-            print(tag)
+            #print(tag)
             posts.find_one_and_update({'_id': ObjectId(id)},{'$push': {'tag': tag}})
+        if len(tags)>0:
+           for tag in tags:
+                posts.find_one_and_update({'_id': ObjectId(id)},{'$push': {'tag': tag}})
 
         posts.update_one({'_id': ObjectId(id)},{"$set": {'body': editedPost}})
+
+    def newPost(self, title, body, tag, tags):
+        chychoVault = get_database()
+        posts = chychoVault["posts3"]
+        post = {}
+        post['title'] = title
+        post['author'] = "chycho"
+        post['body'] = body
+        post['tag'] = []
+        tags.append(tag)
+        post['tag'] = tags
+        print(post['tag'])
+        post['date'] = datetime.datetime.now()
+
+        posts.insert_one(post)
+
+class userRepository:
+    def getUser(self,username,password):
+        chychoVault = get_database()
+        users = chychoVault["users"]
+        return users.find_one({"$and": [{'name':username},{'password':password}]})
+
+    def getUserById(self,id):
+        chychoVault = get_database()
+        users = chychoVault["users"]
+        return users.find_one({"id": id})

@@ -6,10 +6,16 @@
 {{ ckeditor.load(pkg_type="basic") }}
 
 <form method="post">
-    <label for="title">Title</label>
-    <input name="title" id="title" value="{{ request.form['title'] }}"required>
+    <label for="title" style="font-weight: bold;">Title:</label><br><br>
+    <input name="title" style="width: 500px;"id="title" value="{{ request.form['title'] }}"required>
     <br><br>
-    <label for="tag">Tag</label>
+
+    <label for="tag-selector" style="font-weight: bold;">Select Tag(s):</label>
+    <br><br>
+    {% include 'tag_selector.html' %} 
+
+    <label for="tag" style="font-weight: bold;">New Tag (make it something like "book_club", no spaces or special characters):</label>
+    <br><br>
     <input name="tag" id="tag" value="{{ request.form['tag'] }}">
     <br><br>
     {{ ckeditor.create() }}
