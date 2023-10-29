@@ -100,6 +100,12 @@ class postRepository:
         post['date'] = datetime.datetime.now()
 
         posts.insert_one(post)
+    
+    def deletePost(self,id):
+        chychoVault = get_database()
+        posts = chychoVault["posts3"]
+
+        posts.delete_one({"id": id})
 
 class userRepository:
     def getUser(self,username,password):
