@@ -24,7 +24,7 @@ def index():
 
     page = request.args.get('page', type=int, default=1)
     chychoVault = get_database()
-    posts = chychoVault["posts3"]
+    posts = chychoVault["posts6"]
     per_page = 5  # Number of posts per page
     total_posts = posts.count_documents({})
     total_pages = ceil(total_posts / per_page)
@@ -46,7 +46,7 @@ def getPost(id):
 
     return render_template('post.html', post=post, popular=getPopular())
 
-@bp.route("/<tag>", methods=['POST','GET'])
+@bp.route("/s/<tag>", methods=['POST','GET'])
 def getSpecialPost(tag):
 
     if request.method == 'POST':
@@ -58,7 +58,7 @@ def getSpecialPost(tag):
 
     return render_template('post.html', post=post, popular=getPopular())
 
-@bp.route("/index/<tag>", methods=['POST','GET'])
+@bp.route("/<tag>", methods=['POST','GET'])
 def getPostsByTag(tag):
 
     if request.method == 'POST':

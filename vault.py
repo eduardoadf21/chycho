@@ -7,7 +7,7 @@ class postRepository:
 
     def getPosts(self):
         chychoVault = get_database()
-        posts = chychoVault["posts3"]
+        posts = chychoVault["posts6"]
         posts_dicts = posts.find().sort('date',pymongo.DESCENDING)
 
         all_posts = []
@@ -18,25 +18,25 @@ class postRepository:
 
     def getPostByTitle(self,title):
         chychoVault = get_database()
-        posts = chychoVault["posts3"]
+        posts = chychoVault["posts6"]
 
         return posts.find_one({"title": title})
 
     def getPostById(self,id):
         chychoVault = get_database()
-        posts = chychoVault["posts3"]
+        posts = chychoVault["posts6"]
         
         return posts.find_one({"_id": ObjectId(id)})
 
     def getPostByTag(self,tag):
         chychoVault = get_database()
-        posts = chychoVault["posts3"]
+        posts = chychoVault["posts6"]
         
         return posts.find_one({"tag": tag})
 
     def searchPostsByTag(self,tag):
         chychoVault = get_database()
-        posts = chychoVault["posts3"]
+        posts = chychoVault["posts6"]
         
         posts = posts.find({"tag": tag}).sort('date',pymongo.DESCENDING)
 
@@ -49,7 +49,7 @@ class postRepository:
 
     def searchPostsByType(self,type):
         chychoVault = get_database()
-        posts = chychoVault["posts3"]
+        posts = chychoVault["posts6"]
         
         posts = posts.find({"type": type})
         post_list = []
@@ -61,7 +61,7 @@ class postRepository:
 
     def searchPosts(self, search_query):
         chychoVault = get_database()
-        posts = chychoVault["posts3"]
+        posts = chychoVault["posts6"]
 
         query = {"title": { "$regex": search_query, "$options": 'i'}}
 
@@ -75,7 +75,7 @@ class postRepository:
     
     def updatePost(self, id, editedPost, tag, tags):
         chychoVault = get_database()
-        posts = chychoVault["posts3"]
+        posts = chychoVault["posts6"]
 
         if tag != "":
             #print(tag)
@@ -88,7 +88,7 @@ class postRepository:
 
     def newPost(self, title, body, tag, tags):
         chychoVault = get_database()
-        posts = chychoVault["posts3"]
+        posts = chychoVault["posts6"]
         post = {}
         post['title'] = title
         post['author'] = "chycho"
@@ -103,7 +103,7 @@ class postRepository:
     
     def deletePost(self,id):
         chychoVault = get_database()
-        posts = chychoVault["posts3"]
+        posts = chychoVault["posts6"]
 
         posts.delete_one({"_id": ObjectId(id)})
 

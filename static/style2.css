@@ -147,13 +147,14 @@ section::after {
 	padding-top: 8px;
 	border: round;
 	border-radius: 30px;
-	background-color: #e7cbcb;
+	background-color: #f8cece;
 	background-image: url("noisy.png");
 }
 .social-icon{
   text-align: center;
   text-decoration: none;
-  filter: brightness(1.3);
+  filter: brightness(1);
+  filter: contrast(1)
 }
 .social-icon:hover {
   opacity: 0.4;
